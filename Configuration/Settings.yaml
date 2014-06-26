@@ -13,7 +13,7 @@ TYPO3:
     object:
       excludeClasses:
         'tcpdf.*': ['.*']
-        'ExtendedTcPdf.*': ['.*']
+
 
 
 
