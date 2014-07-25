@@ -20,10 +20,16 @@ class ExtendedTcPdf {
 	/**
 	 * @return \ExtendedTcPdf
 	 */
-	public function createPdf() {
+	public function createStandardPdf($backgroundImage) {
 		$this->initLibrary();
 		$pdf = new \ExtendedTcPdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+		$pdf->setPrintFooter(false);
+		$pdf->AddPage();
+		$pdf->setBackgroundImage($backgroundImage);
 		return $pdf;
 	}
+
+
 }
 ?>
