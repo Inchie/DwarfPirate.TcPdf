@@ -23,10 +23,12 @@ class ExtendedTcPdf {
 	public function createStandardPdf($backgroundImage) {
 		$this->initLibrary();
 		$pdf = new \ExtendedTcPdf('P', 'mm', 'A4', true, 'UTF-8', false);
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
-		$pdf->setPrintFooter(false);
-		$pdf->AddPage();
 		$pdf->setBackgroundImage($backgroundImage);
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+		$pdf->SetMargins(PDF_MARGIN_LEFT, 50, 20);
+		$pdf->SetAutoPageBreak(TRUE, 40);
+		$pdf->setPrintFooter(false);
+		$pdf->AddImagePage();
 		return $pdf;
 	}
 
