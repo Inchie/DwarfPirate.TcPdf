@@ -7,13 +7,9 @@
 # instead.                                                               #
 #                                                                        #
 
-
 TYPO3:
   Flow:
     object:
       excludeClasses:
-        'tcpdf.*': ['.*']
-
-
-
+        'DwarfPirate.TcPdf': ['.*']
 

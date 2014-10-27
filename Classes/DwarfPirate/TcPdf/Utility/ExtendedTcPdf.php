@@ -8,21 +8,12 @@ namespace DwarfPirate\TcPdf\Utility;
 class ExtendedTcPdf {
 
 	/**
-	 * init library
-	 */
-	protected function initLibrary() {
-		if(!class_exists('TCPDF', FALSE)) {
-			require_once(FLOW_PATH_PACKAGES . 'Libraries/tcpdf/tcpdf.php');
-			require_once(FLOW_PATH_PACKAGES . 'Libraries/tcpdf/ExtendedTcPdf.php');
-		}
-	}
-
-	/**
-	 * @return \ExtendedTcPdf
+	 * @return \DwarfPirate\TcPdf\ExtendedTcPdf
+	 * ToDo read settings form configuration so that different pdfs can be use
 	 */
 	public function createStandardPdf($backgroundImage) {
-		$this->initLibrary();
-		$pdf = new \ExtendedTcPdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		//$className = $packageKey . '\TcPdf\ExtendedTcPdf';
+		$pdf = new \DwarfPirate\TcPdf\ExtendedTcPdf('P', 'mm', 'A4', true, 'UTF-8', false);
 		$pdf->setBackgroundImage($backgroundImage);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 		$pdf->SetMargins(25, 50, 20);
@@ -36,11 +27,10 @@ class ExtendedTcPdf {
 	 * @param $backgroundImage
 	 * @param int $topMargin
 	 * @param int $pageBreak
-	 * @return \ExtendedTcPdf
+	 * @return \DwarfPirate\TcPdf\ExtendedTcPdf
 	 */
 	public function createReportPdf($backgroundImage, $topMargin = 50, $pageBreak = 40) {
-		$this->initLibrary();
-		$pdf = new \ExtendedTcPdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		$pdf = new \DwarfPirate\TcPdf\ExtendedTcPdf('P', 'mm', 'A4', true, 'UTF-8', false);
 		$pdf->setBackgroundImage($backgroundImage);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 		$pdf->SetMargins(PDF_MARGIN_LEFT, $topMargin, 20);
