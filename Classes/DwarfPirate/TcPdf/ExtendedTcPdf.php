@@ -40,7 +40,7 @@ class ExtendedTcPdf extends \TCPDF {
 		$this->SetX(-70);
 		$this->SetFont('helvetica', '', 10);
 		$this->Cell(70, 10, 'Erstellt am: ' . date('d.m.Y') . ' | Seite '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(),
-				0, false, 'R', 0, '', 0, false, 'T', 'M');
+			0, false, 'R', 0, '', 0, false, 'T', 'M');
 	}
 
 
