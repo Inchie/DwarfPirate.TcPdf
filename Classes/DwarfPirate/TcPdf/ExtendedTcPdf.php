@@ -38,7 +38,7 @@ class ExtendedTcPdf extends \TCPDF {
 	public function Footer() {
 		$this->SetY(-15);
 		$this->SetX(-70);
-		$this->SetFont('helvetica', '', 10);
+		$this->SetFont('helvetica', '', 8);
 		$this->Cell(70, 10, 'Erstellt am: ' . date('d.m.Y') . ' | Seite '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(),
 			0, false, 'R', 0, '', 0, false, 'T', 'M');
 	}
