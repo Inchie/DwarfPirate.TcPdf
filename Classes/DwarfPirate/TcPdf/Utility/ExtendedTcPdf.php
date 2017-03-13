@@ -25,14 +25,17 @@ class ExtendedTcPdf {
 
 	/**
 	 * @param $backgroundImage
+	 * @param int $topMargin
+	 * @param int $pageBreak
+	 * @param int $leftMargin
 	 * @return \DwarfPirate\TcPdf\LandscapeExtendedTcPdf
 	 */
-	public function createLandscapePdf($backgroundImage) {
+	public function createLandscapePdf($backgroundImage, $topMargin = 50, $pageBreak = 40, $leftMargin = 25) {
 		$pdf = new \DwarfPirate\TcPdf\LandscapeExtendedTcPdf('L', 'mm', 'A4', true, 'UTF-8', false);
 		$pdf->setBackgroundImage($backgroundImage);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
-		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-		$pdf->SetAutoPageBreak(TRUE, 20);
+		$pdf->SetMargins($leftMargin, $topMargin, 20);
+		$pdf->SetAutoPageBreak(TRUE, $pageBreak);
 		$pdf->setPrintFooter(false);
 		$pdf->AddImagePage();
 		return $pdf;

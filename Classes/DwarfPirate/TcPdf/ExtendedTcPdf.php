@@ -1,10 +1,11 @@
 <?php
 namespace DwarfPirate\TcPdf;
+use TYPO3\Eel\ProtectedContextAwareInterface;
 
 /**
  * Class ExtendedTcPdf
  */
-class ExtendedTcPdf extends \TCPDF {
+class ExtendedTcPdf extends \TCPDF implements ProtectedContextAwareInterface {
 
 	CONST PDF_FONT = 'helvetica';
 
@@ -123,4 +124,12 @@ class ExtendedTcPdf extends \TCPDF {
 		}
 	}
 
+	/**
+	 * @param string $methodName
+	 * @return boolean
+	 */
+	public function allowsCallOfMethod($methodName)
+	{
+		return true;
+	}
 }
