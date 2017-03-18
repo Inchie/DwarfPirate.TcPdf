@@ -1,6 +1,6 @@
 <?php
 namespace DwarfPirate\TcPdf;
-use TYPO3\Eel\ProtectedContextAwareInterface;
+use Neos\Eel\ProtectedContextAwareInterface;
 
 /**
  * Class ExtendedTcPdf
