@@ -7,9 +7,9 @@
 # instead.                                                               #
 #                                                                        #
 
-TYPO3:
+Neos:
   Flow:
     object:
       excludeClasses:
-        'DwarfPirate.TcPdf': ['.*']
-
+        DwarfPirate.TcPdf:
+          - '.*'
