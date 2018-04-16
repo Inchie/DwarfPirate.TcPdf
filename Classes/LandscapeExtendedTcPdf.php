@@ -1,6 +1,5 @@
 <?php
 namespace DwarfPirate\TcPdf;
-use DwarfPirate\TcPdf\ExtendedTcPdf;
 
 /**
  * Class ExtendedTcPdf
